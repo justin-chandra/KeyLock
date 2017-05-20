@@ -1,2 +1,5 @@
 # KeyLock
-Cutie Hack 2017
+A project for Cutie Hack 2017
+
+## How it Works
+KeyLock measures...
