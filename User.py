@@ -5,6 +5,7 @@ import csv
 
 
 class User:
+    # @classmethod
     # def __init__(self, username, times, passwords):
     #     self.username = username
     #     self.calibration_times = times
@@ -55,8 +56,8 @@ class User:
             for j in range(len(i)):
                 if abs(i[j] - self.average_times[j]) > abs(self.max_difference[j]):
                     self.max_difference[j] = abs(i[j] - self.average_times[j])
-        # print(self.average_times)
-        # print(self.max_difference)
+        print(self.average_times)
+        print(self.max_difference)
         return
 
     def get_max_difference(self, index):
@@ -64,7 +65,3 @@ class User:
 
     def get_password(self):
         return self.password
-
-    def save(self):
-
-        return
