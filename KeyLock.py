@@ -19,15 +19,17 @@ def test(char, time):
     if users[0].get_password() == pw:
         for i in range(len(time) - 1, 0, -1):
             actual_time[i] = (time[i] - time[i - 1])
+
         # check range
         for i in range(len(time) - 1):
             if (time[i] > users[0].get_upper_bound(i)) or (time[i] < users[0].get_lower_bound(i)):
                 error_count = (error_count + 1)
-        print("Behavior match of:", round(((13 - error_count) / 13.0) * 100, 2), "%")
-        if error_count > 6:
-            print("Invalid Password")
+                print(i, users[0].get_lower_bound(i), time[i], users[0].get_upper_bound(i))
+        print("Behavior match of:", round(((13 - error_count) / 12.0) * 100, 2), "%")
+        if error_count > 5:
+            print("Behavior not recognized: Access Denied")
         else:
-            print("Password Accepted")
+            print("Behavior accepted: Access Granted")
     else:
         print("Invalid password")
     return
